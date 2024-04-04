@@ -1,0 +1,104 @@
+version: '3.8'
+
+services:
+
+  react-front:
+    build:
+      context: ./_container/react-front
+      dockerfile: Dockerfile
+    image: react-front:0.1.0
+    container_name: react-front
+    hostname: react-front
+    command: npm start
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./_container/react-front/.env
+    volumes:
+      - ./../persistent_data/frontend/public:/app/public
+      - ./../persistent_data/frontend/src:/app/src
+    networks:
+      - net-web
+
+  django-api:
+    build:
+      context: ./_container/django-api
+      dockerfile: Dockerfile
+    image: django-api-image:0.1.0
+    container_name: django-api
+    hostname: django-api
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+    expose:
+      - 3200
+    volumes:
+      - ./../persistent_data/backend/:/usr/src/app/
+    command: python manage.py runserver 0.0.0.0:3200
+    ports:
+      - "3200:3200"
+    env_file:
+      - ./_container/django-api/.env
+    depends_on:
+      - db_postgres
+    networks:
+      - net-postgresql
+      - net-web
+
+  db_postgres:
+    image: postgres:15.3
+    container_name: db_postgres
+    hostname: db_postgres
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./_container/postgresql:/docker-entrypoint-initdb.d
+    env_file:
+      - ./_container/postgresql/.env
+    expose:
+      - 5432
+    ports:
+      - "5433:5432"
+    networks:
+      - net-postgresql
+      - net-web
+
+  pgadmin:
+    image: dpage/pgadmin4:6.13
+    container_name: "pgadmin_container"
+    hostname: pgadmin
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    env_file:
+      - ./_container/pgadmin/.env
+    ports:
+      - "5050:80"
+    depends_on:
+      - db_postgres
+    networks:
+      - net-postgresql
+      - net-web
+
+
+volumes:
+  postgres_data:
+  pgadmin_data:
+
+networks:
+  net-postgresql:
+    name: net-postgresql
+    driver: bridge
+  net-web:
+    name: net-web
+    driver: bridge
