@@ -1,18 +1,22 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
+import AuthContext from '../../context/AuthContext'
+
 const LogoutPage = () => {
+
+  const { logoutUser } = React.useContext(AuthContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  React.useEffect(() => {
+    logoutUser();
     const timer = setTimeout(() => {
-      // Rediriger l'utilisateur vers la page d'accueil après 3 secondes
       navigate('/');
     }, 3000);
 
-    // Nettoyer le timer lorsque le composant est démonté
     return () => clearTimeout(timer);
   }, [navigate]);
 

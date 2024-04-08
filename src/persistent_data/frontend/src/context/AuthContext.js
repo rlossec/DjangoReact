@@ -69,6 +69,7 @@ export const AuthProvider = ({children}) => {
         setUser(null);
         setAccessToken(null);
         sessionStorage.removeItem('accessToken')
+        sessionStorage.removeItem('user')
         navigate('login/')
       } catch (error) {
         console.error(error);
@@ -76,6 +77,7 @@ export const AuthProvider = ({children}) => {
   }
 
   let contextData = {
+    accessToken: accessToken,
     user: user,
     setUser: setUser,
     error: error,

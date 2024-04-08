@@ -5,3 +5,4 @@ __pycache__/
 .env
 
 node_modules/
+/src/persistent_data/backend/staticfiles/

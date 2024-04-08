@@ -21,7 +21,7 @@ export const mainMenu = (
         <ListItemIcon>
           <DashboardIcon/>
         </ListItemIcon>
-        <ListItemText primary="Dashboard"/>
+        <ListItemText primary="Home"/>
       </ListItemButton>
     </Link>
     <Divider/>

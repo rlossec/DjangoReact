@@ -58,6 +58,7 @@ export default function DrawerAppBar({page, children}) {
           >
             <MenuIcon />
           </IconButton>
+
           <Box sx={{ margin: 'auto'}}>
             <Typography
               component="h1"
@@ -69,6 +70,11 @@ export default function DrawerAppBar({page, children}) {
           </Box>
           { isLargeScreen ?
             <Box>
+              <IconButton >
+                <NavLink to="/profile/">
+                  <AccountCircleIcon sx={{color: 'white'}} />
+                </NavLink>
+              </IconButton>
               <IconButton sx={{mx: '15px'}}>
                 <NavLink to="/logout/">
                   <PowerSettingsNewIcon sx={{"color": "white"}} />
