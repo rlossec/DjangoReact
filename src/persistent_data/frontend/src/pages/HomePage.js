@@ -9,7 +9,7 @@ import AppBar from '../components/AppBar';
 
 const HomePage = () => {
   return (
-    <AppBar page="Home">
+    <AppBar page="Accueil">
       {/* Contenu de la page d'accueil */}
       <Container component="h1" variant="h2">
         <Typography>Welcome to the homepage!</Typography>

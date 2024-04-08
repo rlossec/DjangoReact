@@ -23,10 +23,10 @@ const LogoutPage = () => {
   return (
     <Box sx={{ textAlign: 'center', mt: 8 }}>
       <Typography variant="h4" gutterBottom>
-        Logout successful
+        Déconnexion réussie
       </Typography>
       <Typography variant="body1">
-        You have been logged out. Redirecting to the home page...
+        Vous avez été déconnecté. Vous allez être rédirigé vers la page de connexion...
       </Typography>
     </Box>
   );

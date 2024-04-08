@@ -48,7 +48,7 @@ export default function LoginPage() {
 			>
 				<Avatar sx={{margin: 1, backgroundColor: '#ef5350'}}></Avatar>
 				<Typography component="h1" variant="h5">
-					Sign in
+					Se connecter
 				</Typography>
 				<form onSubmit={loginUser} sx={{width: {sm: '100%', md:400}, marginTop: 1}}>
 					<TextField
@@ -56,8 +56,8 @@ export default function LoginPage() {
 						margin="normal"
 						required
 						fullWidth
-						id="email"
-						label="Username"
+						id="username"
+						label="Nom d'utilisateur"
 						name="username"
 						autoComplete="username"
 						autoFocus
@@ -69,7 +69,7 @@ export default function LoginPage() {
 						required
 						fullWidth
 						name="password"
-						label="Password"
+						label="Mot de passe"
 						type="password"
 						id="password"
 						autoComplete="current-password"
@@ -90,17 +90,17 @@ export default function LoginPage() {
 						color="primary"
 						sx={{marginTop: 3, marginBottom: 3}}
 					>
-						Sign In
+						Se connecter
 					</Button>
 					<Grid container>
 						<Grid item xs>
 							<Link href="/password-email/" variant="body2" underline="hover">
-								Forgot password ?
+								Mot de passe oublié ?
 							</Link>
 						</Grid>
 						<Grid item>
 							<Link href="/register/" variant="body2" underline="hover">
-								<span>Sign Up</span>
+								<span>S'inscrire</span>
 							</Link>
 						</Grid>
 					</Grid>

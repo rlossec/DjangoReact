@@ -44,7 +44,7 @@ export default function RegisterPage() {
               required
               fullWidth
               id="username"
-              label="Username"
+              label="Nom d'utilisateur"
               name="username"
               autoComplete="username"
               autoFocus
@@ -61,7 +61,7 @@ export default function RegisterPage() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="Adresse email"
               name="email"
               autoComplete="email"
               onChange={handleChange}
@@ -77,7 +77,7 @@ export default function RegisterPage() {
               required
               fullWidth
               name="password1"
-              label="Password"
+              label="Mot de passe"
               type="password"
               id="password1"
               autoComplete="new-password"
@@ -94,7 +94,7 @@ export default function RegisterPage() {
               required
               fullWidth
               name="password2"
-              label="Confirm Password"
+              label="Confirmer le mot de passe"
               type="password"
               id="password2"
               autoComplete="new-password"
@@ -111,7 +111,7 @@ export default function RegisterPage() {
                 .filter((field) => !['username', 'email', 'password1', 'password2'].includes(field))
                 .map((field, index) => (
                   <Alert key={index} severity="error" sx={{marginTop: 1, marginBottom: 1}}>
-                    <strong>Errors:</strong> {error[field].join(' ')}
+                    <strong>Erreurs:</strong> {error[field].join(' ')}
                   </Alert>
             ))}
 
@@ -122,12 +122,12 @@ export default function RegisterPage() {
               color="primary"
               sx={{marginTop: 3, marginBottom: 3}}
             >
-              Register
+              S'inscrire
             </Button>
             <Grid container>
               <Grid item>
                 <Link href="/login/" variant="body2" underline="hover">
-                  Already have an account? Sign in
+                  Vous avez déjà un compte ? Se connecter
                 </Link>
               </Grid>
             </Grid>

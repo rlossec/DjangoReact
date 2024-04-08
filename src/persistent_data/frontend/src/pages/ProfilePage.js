@@ -8,7 +8,7 @@ import { AccountProfileDetails } from '../sections/profile/account-profile-detai
 const ProfilePage = () => {
 
   return (
-    <AppBar page="Profile">
+    <AppBar page="Profil">
       <Box
         component="main"
         sx={{
@@ -20,7 +20,7 @@ const ProfilePage = () => {
           <Stack spacing={3}>
             <div>
               <Typography variant="h4">
-                Account
+                Compte
               </Typography>
             </div>
             <div>
