@@ -12,7 +12,7 @@ const HomePage = () => {
     <AppBar page="Accueil">
       {/* Contenu de la page d'accueil */}
       <Container component="h1" variant="h2">
-        <Typography>Welcome to the homepage!</Typography>
+        <Typography>Bienvenue sur la page d'accueil!</Typography>
       </Container>
     </AppBar>
   );
