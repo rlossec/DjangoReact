@@ -43,7 +43,7 @@ export default function DrawerAppBar({page, children}) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" color="success">
+      <AppBar component="nav" color="primary">
         <Toolbar sx={{
           display: 'flex',
           justifyContent: 'space-between',
