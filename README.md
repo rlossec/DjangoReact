@@ -12,8 +12,13 @@ Le dossier src est séparé en deux :
 - `persistant_data` : contenant les fichiers peristants
 
 ## Dossier _install
-On retrouve un docker-compose.yml dans le fichier src/_install/.
-On y retrouve deux dossiers pour le front : `react-front` et le back : `django-api`.
+Dans le fichier src/_install/ :  
+- un docker-compose.yml 
+- un dossier _container
+
+Dans ce dossier _container on a un dossier par container :
+- le front : `react-front`
+- le back : `django-api`.
 
 # Instructions
 
@@ -68,4 +73,4 @@ PGADMIN_DEFAULT_PASSWORD=<pgadmin_password>
 ## 2. Commandes Docker
 
 `docker-compose build`  
-`docker-compose up -d`
+`docker-compose -p react-docker up -d`
