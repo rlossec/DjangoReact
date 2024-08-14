@@ -22,7 +22,7 @@ RUN apt-get update -y --fix-missing && \
     apt-get install -y nano || exit 1
 
 # copy entrypoint.sh
-COPY entrypoint.sh /tmp/entrypoint.sh
+ADD entrypoint.sh /tmp/entrypoint.sh
 
 # give permissions
 RUN chmod +x /tmp/entrypoint.sh
