@@ -94,7 +94,7 @@ export default function LoginPage() {
 					</Button>
 					<Grid container>
 						<Grid item xs>
-							<Link href="/password-email/" variant="body2" underline="hover">
+							<Link href="/auth/password/reset/" variant="body2" underline="hover">
 								Mot de passe oublié ?
 							</Link>
 						</Grid>
