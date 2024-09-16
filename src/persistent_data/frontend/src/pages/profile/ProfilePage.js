@@ -1,9 +1,9 @@
 
 import { Box, Container, Stack, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 
-import AppBar from '../components/AppBar'
-import { AccountProfile } from '../sections/profile/account-profile';
-import { AccountProfileDetails } from '../sections/profile/account-profile-details';
+import AppBar from '../../components/AppBar'
+import { AccountProfile } from '../../sections/profile/account-profile';
+import { AccountProfileDetails } from '../../sections/profile/account-profile-details';
 
 const ProfilePage = () => {
 
@@ -18,12 +18,12 @@ const ProfilePage = () => {
       >
         <Container maxWidth="lg">
           <Stack spacing={3}>
-            <div>
+            <Box>
               <Typography variant="h4">
                 Compte
               </Typography>
-            </div>
-            <div>
+            </Box>
+            <Box>
               <Grid
                 container
                 spacing={3}
@@ -43,7 +43,7 @@ const ProfilePage = () => {
                   <AccountProfileDetails/>
                 </Grid>
               </Grid>
-            </div>
+            </Box>
           </Stack>
         </Container>
       </Box>
