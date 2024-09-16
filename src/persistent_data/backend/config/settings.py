@@ -31,6 +31,12 @@ CORS_ORIGIN_WHITELIST = [os.getenv("CORS_ORIGIN_WHITELIST")]
 # Application definition
 
 INSTALLED_APPS = [
+
+    'rest_framework',
+    'rest_framework.authtoken',
+
+    'dj_rest_auth',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,10 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'corsheaders',
-    'rest_framework',
-    'rest_framework.authtoken',
 
-    'dj_rest_auth',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -55,6 +58,14 @@ INSTALLED_APPS = [
 SITE_ID = 1
 AUTH_USER_MODEL = 'accounts.User'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = 'noreply@yourdomain.com'
 
 REST_AUTH = {
     'LOGIN_SERIALIZER': 'dj_rest_auth.serializers.LoginSerializer',
@@ -74,7 +85,7 @@ REST_AUTH = {
     'TOKEN_MODEL': 'rest_framework.authtoken.models.Token',
     'TOKEN_CREATOR': 'dj_rest_auth.utils.default_create_token',
 
-    'PASSWORD_RESET_USE_SITES_DOMAIN': False,
+    'PASSWORD_RESET_USE_SITES_DOMAIN': True,
     'OLD_PASSWORD_FIELD_ENABLED': False,
     'LOGOUT_ON_PASSWORD_CHANGE': False,
     'SESSION_LOGIN': True,
@@ -109,7 +120,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -168,7 +179,7 @@ REST_FRAMEWORK = {
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
