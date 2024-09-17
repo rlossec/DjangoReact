@@ -31,24 +31,24 @@ On va pour cela créé deux nouveaux dossiers dans `_install` :
 
 Dans `django-api`, on place un `.env` avec les variables suivantes :
 ```
-    SECRET_KEY=<Your Secret Key>
-    DEBUG=
-    ALLOWED_HOSTS='127.0.0.1 localhost'
-    
-    DJANGO_SUPERUSER_USERNAME=<Your django superuser username>
-    DJANGO_SUPERUSER_EMAIL=<Your django superuser email>
-    DJANGO_SUPERUSER_PASSWORD=<Your django superuser password>
-    
-    CORS_ALLOW_CREDENTIALS=True
-    CORS_ALLOWED_ORIGINS=http://localhost:3000
-    CORS_ORIGIN_WHITELIST=http://localhost:3000
-    
-    POSTGRES_DB=<Your postgres database name>
-    POSTGRES_USER=<Your postgres database user>
-    POSTGRES_PASSWORD=<Your postgres database password>
-    POSTGRES_ENGINE=django.db.backends.postgresql
-    POSTGRES_HOST=db_postgres
-    POSTGRES_PORT=5432
+SECRET_KEY=<Your Secret Key>
+DEBUG=
+ALLOWED_HOSTS='127.0.0.1 localhost'
+
+DJANGO_SUPERUSER_USERNAME=<Your django superuser username>
+DJANGO_SUPERUSER_EMAIL=<Your django superuser email>
+DJANGO_SUPERUSER_PASSWORD=<Your django superuser password>
+
+CORS_ALLOW_CREDENTIALS=True
+CORS_ALLOWED_ORIGINS=http://localhost:3000
+CORS_ORIGIN_WHITELIST=http://localhost:3000
+
+POSTGRES_DB=<Your postgres database name>
+POSTGRES_USER=<Your postgres database user>
+POSTGRES_PASSWORD=<Your postgres database password>
+POSTGRES_ENGINE=django.db.backends.postgresql
+POSTGRES_HOST=db_postgres
+POSTGRES_PORT=5432
 ```
 
 Dans `react-front`, on place un `.env` avec
